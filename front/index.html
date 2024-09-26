@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predição de Valor de Casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Predição de Valor de Casa</h1>
+
+        <div id="formSection">
+            <h2>Insira os dados da casa</h2>
+            <form id="houseForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bedrooms">Quartos:</label>
+                        <input type="number" id="bedrooms" name="bedrooms" placeholder="Número de quartos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bathrooms">Banheiros:</label>
+                        <input type="number" id="bathrooms" name="bathrooms" placeholder="Número de banheiros" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sqft_living">Área (sqft living):</label>
+                        <input type="number" id="sqft_living" name="sqft_living" placeholder="Área da casa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sqft_lot">Tamanho do lote (sqft lot):</label>
+                        <input type="number" id="sqft_lot" name="sqft_lot" placeholder="Tamanho do lote" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="floors">Andares:</label>
+                        <input type="number" id="floors" name="floors" placeholder="Número de andares" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waterfront">Frente para água:</label>
+                        <select id="waterfront" name="waterfront" required>
+                            <option value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="view">Vista:</label>
+                        <input type="number" id="view" name="view" placeholder="Vista (0-4)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condition">Condição:</label>
+                        <input type="number" id="condition" name="condition" placeholder="Condição (1-5)" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sqft_above">Área acima (sqft above):</label>
+                        <input type="number" id="sqft_above" name="sqft_above" placeholder="Área acima do solo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sqft_basement">Área do porão (sqft basement):</label>
+                        <input type="number" id="sqft_basement" name="sqft_basement" placeholder="Área do porão" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="yr_built">Ano de construção:</label>
+                        <input type="number" id="yr_built" name="yr_built" placeholder="Ano de construção" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="yr_renovated">Ano de renovação:</label>
+                        <input type="number" id="yr_renovated" name="yr_renovated" placeholder="Ano de renovação (0 se não houve)" required>
+                    </div>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="resultSection" style="display: none;">
+            <h2>Valor previsto da casa</h2>
+            <p id="housePrice">Aguarde...</p>
+            <button onclick="resetForm()">Fazer nova previsão</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
